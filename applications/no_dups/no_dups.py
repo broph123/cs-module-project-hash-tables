@@ -1,6 +1,8 @@
+cache = {}
+
+
 def no_dups(s):
     # Your code here
-
 
 
 if __name__ == "__main__":

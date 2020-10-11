@@ -5,21 +5,26 @@ import random
 num_table = {}
 
 
-def slowfun_too_slow(x, y):
-    v = math.pow(x, y)
-    v = math.factorial(v)
-    v //= (x + y)
-    v %= 982451653
-
-    return v
-
-
 def slowfun(x, y):
     """
     Rewrite slowfun_too_slow() in here so that the program produces the same
     output, but completes quickly instead of taking ages to run.
     """
     # Your code here
+    v = math.pow(x, y)
+
+    if v not in num_table:
+        num_table[v] = math.factorial(v)
+        value = num_table[v]
+        value //= (x + y)
+        value %= 982451653
+        return value
+
+    else:
+        stored = num_table[v]
+        stored //= (x+y)
+        stored %= 982451653
+        return stored
 
 
 # Do not modify below this line!
